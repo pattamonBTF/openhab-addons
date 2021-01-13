@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config-description:config-descriptions
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:config-description="https://openhab.org/schemas/config-description/v1.0.0"
+	xsi:schemaLocation="https://openhab.org/schemas/config-description/v1.0.0 https://openhab.org/schemas/config-description-1.0.0.xsd">
+
+	<config-description uri="bwc:command_state_channel">
+
+		<!-- <parameter name="BWCAllBCUTopic" type="text">
+			<label>MQTT BWC-All-BCU Topic</label>
+			<description>An MQTT topic that BWC will send a command to lock/unlock all BLMs on all BCUs. Format: BWC#/BCU-All/</description>
+		</parameter>
+
+		<parameter name="BWCMultiBCUTopic" type="text">
+			<label>MQTT BWC_Multi_BCU Topic</label>
+			<description>An MQTT topic that BWC will send a command to lock/unlock all BLMs on multiple BCUs. Format: BWC#/BCU/</description>
+		</parameter>
+
+		<parameter name="BCUAllBLMTopic" type="text">
+			<label>MQTT BCU_ALL_BLM Topic</label>
+			<description>An MQTT topic that BWC will send a command to lock/unlock all BLMs on a BCUs. Format: BWC#/BLM-All/</description>
+		</parameter>
+
+		<parameter name="BCUMultiBLMTopic" type="text">
+			<label>MQTT BCU_Multi_BLM Topic</label>
+			<description>An MQTT topic that BWC will send a command to lock/unlock multiple BLMs on a BCUs. Format: BWC#/BLM/</description>
+		</parameter> -->
+
+		<parameter name="commandTopic" type="text">
+			<label>MQTT BWC Command Topic</label>
+			<description>An MQTT topic for sending a command to lock/unlock some BCUs. Format: BWC#/{Message}</description>
+		</parameter>
+
+	</config-description>
+</config-description:config-descriptions>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thing:thing-descriptions bindingId="b22x"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+	xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0 https://openhab.org/schemas/thing-description-1.0.0.xsd">
+
+	<!-- Sample Thing Type -->
+	<!-- <thing-type id="sample">
+		<label>B22X Binding Thing</label>
+		<description>Sample thing for B22X Binding</description>
+
+		<channels>
+			<channel id="channel1" typeId="sample-channel"/>
+		</channels>
+
+		<config-description>
+			<parameter name="config1" type="text" required="true">
+				<label>Sample Parameter</label>
+				<description>This is a sample text configuration parameter</description>
+			</parameter>
+		</config-description>
+
+	</thing-type> -->
+
+	<!-- Sample Channel Type -->
+	<!-- <channel-type id="sample-channel">
+		<item-type>b22xItem</item-type>
+		<label>B22X Binding Channel</label>
+		<description>Sample channel for B22X Binding</description>
+	</channel-type> -->
+
+	<thing-type id="structure:bwc"
+		extensible="command_state,state_value,contact_value">
+		<supported-bridge-type-refs>
+			<bridge-type-ref id="b22x_broker"/>
+		</supported-bridge-type-refs>
+		<label>B22X Wall Controller</label>
+		<description>This is a B22X Wall Controller (BWC). You need a configured B22X Broker first.</description>
+
+		<!--<config-description>
+			 <parameter name="availabilityTopic" type="text">
+				<label>Availability Topic</label>
+				<description>Topic of the LWT of the device</description>
+				<advanced>true</advanced>
+			</parameter>
+			<parameter name="payloadAvailable" type="text">
+				<label>Payload available</label>
+				<description>Payload of the 'Availability Topic', when the device is available. Default: 'ON'</description>
+				<advanced>true</advanced>
+			</parameter>
+			<parameter name="payloadNotAvailable" type="text">
+				<label>Payload not availabe</label>
+				<description>Payload of the 'Availability Topic', when the device is *not* available. Default: 'OFF'</description>
+				<advanced>true</advanced>
+			</parameter> 
+		</config-description>-->
+	</thing-type>
+
+	<channel-type id="command_state">
+		<item-type>String</item-type>
+		<label>Set Command State</label>
+		<config-description-ref uri="bwc:command_state_channel"/>
+	</channel-type>
+
+	<channel-type id="state_value">
+		<item-type>String</item-type>
+		<label>Get State Value</label>
+		<config-description-ref uri="bwc:state_value_channel"></config-description-ref>
+	</channel-type>
+
+	<channel-type id="contact_value">
+		<item-type>String</item-type>
+		<label>Get Contact Value</label>
+		<config-description-ref uri="bwc:contact_value_channel"></config-description-ref>
+	</channel-type>
+
+	<!-- <channel-type id="trigger">
+		<item-type>Trigger</item-type>
+		<label>Trigger</label>
+		<description></description>
+		<config-description-ref uri="thing-type:mqtt:trigger_channel"></config-description-ref>
+	</channel-type> -->
+
+</thing:thing-descriptions>
